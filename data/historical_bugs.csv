@@ -1,0 +1,801 @@
+title,description,component,exception_type,priority
+Rounding precision issue in utils,"integer division loses decimals, minor inaccuracy; regression from last release",utils,AssertionError,P3
+Account takeover via duplicate registration in login,"existing user credentials overwritten, security vulnerability; reported by QA",login,MissingExceptionHandling,P1
+Data loss when saving records in checkout,"database corruption, records deleted permanently; reported by QA",checkout,IOError,P1
+Deprecated API warning in utils,"warning logged, works for now; found during code review",utils,DeprecationWarning,P3
+Report export fails in orders,"feature broken for many users, workaround exists; reported by QA",orders,ValueError,P2
+Slow response in utils under load,"performance degradation, timeout sometimes; found in nightly build",utils,TimeoutError,P3
+SQL injection possible in login search,"security hole, attacker can read database; seen in staging",login,AssertionError,P1
+TypeError when field is missing in api,"crash on malformed input, feature unusable; reported by QA",api,TypeError,P2
+Edge case not handled in calculator,unusual input gives unexpected but harmless result; found during code review,calculator,AssertionError,P3
+Application crash on startup in database,"service down for all users, production outage; seen in staging",database,RuntimeError,P1
+Data loss when saving records in billing,"database corruption, records deleted permanently; regression from last release",billing,IOError,P1
+Minor UI label misaligned in docs,cosmetic layout issue; reproducible,docs,AssertionError,P4
+SQL injection possible in checkout search,"security hole, attacker can read database; seen in staging",checkout,AssertionError,P1
+Slow response in exchange under load,"performance degradation, timeout sometimes; customer ticket",exchange,TimeoutError,P3
+TypeError when field is missing in cart,"crash on malformed input, feature unusable; regression from last release",cart,TypeError,P2
+Rounding precision issue in reports,"integer division loses decimals, minor inaccuracy; reproducible",reports,AssertionError,P3
+Unhandled ZeroDivisionError in inventory,"crash when input is zero, unhandled exception reaches user; reproducible",inventory,ZeroDivisionError,P2
+Wrong calculation result in reports,"incorrect output, users get wrong numbers",reports,AssertionError,P2
+Customers overcharged at checkout in checkout,"payment total wrong, money lost, billing incorrect; found in nightly build",checkout,AssertionError,P1
+Validation message unclear in exchange,"error message confusing, wrong error type raised; regression from last release",exchange,ValueError,P3
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact; reported by QA",reports,AssertionError,P4
+Inconsistent formatting in logging output,"cosmetic alignment issue, no functional impact; found during code review",logging,AssertionError,P4
+Validation message unclear in api,"error message confusing, wrong error type raised",api,ValueError,P3
+Edge case not handled in calculator,unusual input gives unexpected but harmless result; seen in staging,calculator,AssertionError,P3
+Edge case not handled in search,unusual input gives unexpected but harmless result; reproducible,search,AssertionError,P3
+Password stored in plain text by payment,"credentials leak, security compliance failure; found in nightly build",payment,AssertionError,P1
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact; found in nightly build",reports,AssertionError,P4
+Unused variable warning in reports,"code style, lint warning only; reproducible",reports,SyntaxWarning,P4
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; reproducible,exchange,AssertionError,P3
+Unhandled ZeroDivisionError in orders,"crash when input is zero, unhandled exception reaches user; found in nightly build",orders,ZeroDivisionError,P2
+KeyError crash for unknown item in api,"unhandled exception, request fails with 500 error; seen in staging",api,KeyError,P2
+Rounding precision issue in exchange,"integer division loses decimals, minor inaccuracy; customer ticket",exchange,AssertionError,P3
+Edge case not handled in reports,unusual input gives unexpected but harmless result; found during code review,reports,AssertionError,P3
+Unused variable warning in logging,"code style, lint warning only; found during code review",logging,SyntaxWarning,P4
+Docstring outdated in utils,"documentation mismatch, cosmetic",utils,AssertionError,P4
+Data loss when saving records in login,"database corruption, records deleted permanently; regression from last release",login,IOError,P1
+Rounding precision issue in calculator,"integer division loses decimals, minor inaccuracy; reported by QA",calculator,AssertionError,P3
+Unhandled ZeroDivisionError in auth,"crash when input is zero, unhandled exception reaches user; regression from last release",auth,ZeroDivisionError,P2
+Wrong calculation result in inventory,"incorrect output, users get wrong numbers",inventory,AssertionError,P2
+Wrong calculation result in auth,"incorrect output, users get wrong numbers; seen in staging",auth,AssertionError,P2
+Password stored in plain text by database,"credentials leak, security compliance failure",database,AssertionError,P1
+Typo in ui log message,cosmetic spelling mistake in logs; seen in staging,ui,AssertionError,P3
+KeyError crash for unknown item in api,"unhandled exception, request fails with 500 error; found during code review",api,KeyError,P2
+Negative stock allowed in checkout,"inventory goes negative, orders shipped without stock, money lost; seen in staging",checkout,MissingExceptionHandling,P1
+Empty list crashes auth,"ZeroDivisionError on empty input, crash; reported by QA",auth,ZeroDivisionError,P2
+Edge case not handled in calculator,unusual input gives unexpected but harmless result; regression from last release,calculator,AssertionError,P3
+Negative stock allowed in inventory,"inventory goes negative, orders shipped without stock, money lost; found during code review",inventory,MissingExceptionHandling,P1
+Inconsistent formatting in utils output,"cosmetic alignment issue, no functional impact; found in nightly build",utils,AssertionError,P4
+Minor UI label misaligned in docs,cosmetic layout issue,docs,AssertionError,P4
+Application crash on startup in checkout,"service down for all users, production outage; reported by QA",checkout,RuntimeError,P1
+Rounding precision issue in calculator,"integer division loses decimals, minor inaccuracy; customer ticket",calculator,AssertionError,P3
+Account takeover via duplicate registration in payment,"existing user credentials overwritten, security vulnerability; regression from last release",payment,MissingExceptionHandling,P1
+Report export fails in inventory,"feature broken for many users, workaround exists; reported by QA",inventory,ValueError,P2
+Validation message unclear in utils,"error message confusing, wrong error type raised; reproducible",utils,ValueError,P3
+Inconsistent formatting in docs output,"cosmetic alignment issue, no functional impact; found during code review",docs,AssertionError,P4
+Application crash on startup in inventory,"service down for all users, production outage; seen in staging",inventory,RuntimeError,P1
+Account takeover via duplicate registration in login,"existing user credentials overwritten, security vulnerability; found in nightly build",login,MissingExceptionHandling,P1
+SQL injection possible in login search,"security hole, attacker can read database; reproducible",login,AssertionError,P1
+Wrong calculation result in auth,"incorrect output, users get wrong numbers; found in nightly build",auth,AssertionError,P2
+Deprecated API warning in exchange,"warning logged, works for now; seen in staging",exchange,DeprecationWarning,P3
+Inconsistent formatting in docs output,"cosmetic alignment issue, no functional impact; seen in staging",docs,AssertionError,P4
+Slow response in search under load,"performance degradation, timeout sometimes; regression from last release",search,TimeoutError,P3
+Slow response in utils under load,"performance degradation, timeout sometimes; found in nightly build",utils,TimeoutError,P3
+Intermittent network timeout in calculator,"flaky external service, retry succeeds; found during code review",calculator,TimeoutError,P3
+Typo in ui log message,cosmetic spelling mistake in logs; customer ticket,ui,AssertionError,P4
+Intermittent network timeout in reports,"flaky external service, retry succeeds; found during code review",reports,TimeoutError,P3
+Rounding precision issue in calculator,"integer division loses decimals, minor inaccuracy; customer ticket",calculator,AssertionError,P3
+Intermittent network timeout in exchange,"flaky external service, retry succeeds; found during code review",exchange,TimeoutError,P3
+Application crash on startup in database,"service down for all users, production outage; reported by QA",database,RuntimeError,P1
+Inconsistent formatting in logging output,"cosmetic alignment issue, no functional impact; reproducible",logging,AssertionError,P4
+Validation message unclear in exchange,"error message confusing, wrong error type raised; regression from last release",exchange,ValueError,P3
+Inconsistent formatting in utils output,"cosmetic alignment issue, no functional impact; found during code review",utils,AssertionError,P3
+Inconsistent formatting in docs output,"cosmetic alignment issue, no functional impact; seen in staging",docs,AssertionError,P4
+Unhandled ZeroDivisionError in auth,"crash when input is zero, unhandled exception reaches user; regression from last release",auth,ZeroDivisionError,P2
+Minor UI label misaligned in docs,cosmetic layout issue; regression from last release,docs,AssertionError,P4
+Session not expired in inventory,token remains valid after logout; found in nightly build,inventory,AssertionError,P2
+Docstring outdated in docs,"documentation mismatch, cosmetic; found during code review",docs,AssertionError,P4
+Edge case not handled in search,unusual input gives unexpected but harmless result; seen in staging,search,AssertionError,P3
+Docstring outdated in logging,"documentation mismatch, cosmetic; found in nightly build",logging,AssertionError,P4
+Password stored in plain text by database,"credentials leak, security compliance failure; reproducible",database,AssertionError,P1
+Report export fails in calculator,"feature broken for many users, workaround exists; regression from last release",calculator,ValueError,P2
+Session not expired in reports,token remains valid after logout; reproducible,reports,AssertionError,P2
+Session not expired in orders,token remains valid after logout; seen in staging,orders,AssertionError,P2
+Intermittent network timeout in exchange,"flaky external service, retry succeeds; found during code review",exchange,TimeoutError,P3
+Session not expired in orders,token remains valid after logout; regression from last release,orders,AssertionError,P2
+Wrong calculation result in cart,"incorrect output, users get wrong numbers; customer ticket",cart,AssertionError,P2
+Intermittent network timeout in api,"flaky external service, retry succeeds; reported by QA",api,TimeoutError,P3
+KeyError crash for unknown item in reports,"unhandled exception, request fails with 500 error; reproducible",reports,KeyError,P2
+Wrong calculation result in cart,"incorrect output, users get wrong numbers",cart,AssertionError,P2
+Deprecated API warning in reports,"warning logged, works for now; found in nightly build",reports,DeprecationWarning,P3
+Deprecated API warning in exchange,"warning logged, works for now; regression from last release",exchange,DeprecationWarning,P3
+Slow response in reports under load,"performance degradation, timeout sometimes; reported by QA",reports,TimeoutError,P3
+Wrong calculation result in api,"incorrect output, users get wrong numbers; seen in staging",api,AssertionError,P2
+Session not expired in api,token remains valid after logout; found during code review,api,AssertionError,P2
+KeyError crash for unknown item in inventory,"unhandled exception, request fails with 500 error; reported by QA",inventory,KeyError,P2
+Typo in utils log message,cosmetic spelling mistake in logs,utils,AssertionError,P4
+Data loss when saving records in login,"database corruption, records deleted permanently",login,IOError,P1
+Edge case not handled in exchange,unusual input gives unexpected but harmless result,exchange,AssertionError,P3
+Deprecated API warning in exchange,"warning logged, works for now",exchange,DeprecationWarning,P3
+Minor UI label misaligned in utils,cosmetic layout issue; regression from last release,utils,AssertionError,P4
+Docstring outdated in reports,"documentation mismatch, cosmetic; regression from last release",reports,AssertionError,P4
+Unhandled ZeroDivisionError in cart,"crash when input is zero, unhandled exception reaches user; found in nightly build",cart,ZeroDivisionError,P2
+Report export fails in calculator,"feature broken for many users, workaround exists; regression from last release",calculator,ValueError,P2
+KeyError crash for unknown item in cart,"unhandled exception, request fails with 500 error; found during code review",cart,KeyError,P2
+Report export fails in reports,"feature broken for many users, workaround exists; regression from last release",reports,ValueError,P2
+Minor UI label misaligned in reports,cosmetic layout issue; reported by QA,reports,AssertionError,P4
+Unused variable warning in utils,"code style, lint warning only; reproducible",utils,SyntaxWarning,P4
+Wrong calculation result in auth,"incorrect output, users get wrong numbers; found during code review",auth,AssertionError,P2
+Deprecated API warning in exchange,"warning logged, works for now; regression from last release",exchange,DeprecationWarning,P3
+TypeError when field is missing in reports,"crash on malformed input, feature unusable; found during code review",reports,TypeError,P2
+Session not expired in auth,token remains valid after logout; customer ticket,auth,AssertionError,P2
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact; found during code review",reports,AssertionError,P4
+Deprecated API warning in calculator,"warning logged, works for now; found during code review",calculator,DeprecationWarning,P3
+Negative stock allowed in payment,"inventory goes negative, orders shipped without stock, money lost; reproducible",payment,MissingExceptionHandling,P4
+TypeError when field is missing in orders,"crash on malformed input, feature unusable; found during code review",orders,TypeError,P2
+Empty list crashes reports,"ZeroDivisionError on empty input, crash; seen in staging",reports,ZeroDivisionError,P2
+Session not expired in api,token remains valid after logout; regression from last release,api,AssertionError,P3
+Deprecated API warning in calculator,"warning logged, works for now; regression from last release",calculator,DeprecationWarning,P3
+Security: payment allows login with empty password,"authentication bypass, unauthorized access to accounts",payment,AssertionError,P1
+Edge case not handled in reports,unusual input gives unexpected but harmless result; found in nightly build,reports,AssertionError,P3
+Slow response in exchange under load,"performance degradation, timeout sometimes; seen in staging",exchange,TimeoutError,P3
+Slow response in search under load,"performance degradation, timeout sometimes; reported by QA",search,TimeoutError,P3
+Unused variable warning in utils,"code style, lint warning only; regression from last release",utils,SyntaxWarning,P4
+Data loss when saving records in login,"database corruption, records deleted permanently; found in nightly build",login,IOError,P1
+Unused variable warning in ui,"code style, lint warning only; reported by QA",ui,SyntaxWarning,P4
+Wrong calculation result in cart,"incorrect output, users get wrong numbers; reproducible",cart,AssertionError,P2
+Password stored in plain text by inventory,"credentials leak, security compliance failure; reproducible",inventory,AssertionError,P1
+Validation message unclear in utils,"error message confusing, wrong error type raised; customer ticket",utils,ValueError,P3
+Deprecated API warning in search,"warning logged, works for now",search,DeprecationWarning,P3
+Empty list crashes cart,"ZeroDivisionError on empty input, crash; reproducible",cart,ZeroDivisionError,P2
+Typo in docs log message,cosmetic spelling mistake in logs; regression from last release,docs,AssertionError,P4
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; reproducible,exchange,AssertionError,P3
+SQL injection possible in payment search,"security hole, attacker can read database; reproducible",payment,AssertionError,P1
+Intermittent network timeout in search,"flaky external service, retry succeeds; found in nightly build",search,TimeoutError,P3
+Edge case not handled in reports,unusual input gives unexpected but harmless result; found during code review,reports,AssertionError,P3
+Empty list crashes inventory,"ZeroDivisionError on empty input, crash",inventory,ZeroDivisionError,P2
+Unhandled ZeroDivisionError in calculator,"crash when input is zero, unhandled exception reaches user; found during code review",calculator,ZeroDivisionError,P2
+Intermittent network timeout in utils,"flaky external service, retry succeeds",utils,TimeoutError,P3
+Intermittent network timeout in api,"flaky external service, retry succeeds; reproducible",api,TimeoutError,P3
+Wrong calculation result in orders,"incorrect output, users get wrong numbers; regression from last release",orders,AssertionError,P2
+Data loss when saving records in database,"database corruption, records deleted permanently; customer ticket",database,IOError,P1
+Negative stock allowed in billing,"inventory goes negative, orders shipped without stock, money lost; found in nightly build",billing,MissingExceptionHandling,P1
+Inconsistent formatting in docs output,"cosmetic alignment issue, no functional impact; customer ticket",docs,AssertionError,P4
+Session not expired in api,token remains valid after logout; reported by QA,api,AssertionError,P2
+Unused variable warning in docs,"code style, lint warning only; customer ticket",docs,SyntaxWarning,P4
+Validation message unclear in calculator,"error message confusing, wrong error type raised; found in nightly build",calculator,ValueError,P3
+Wrong calculation result in orders,"incorrect output, users get wrong numbers; reported by QA",orders,AssertionError,P2
+Empty list crashes reports,"ZeroDivisionError on empty input, crash; seen in staging",reports,ZeroDivisionError,P2
+Unhandled ZeroDivisionError in api,"crash when input is zero, unhandled exception reaches user; reported by QA",api,ZeroDivisionError,P2
+Application crash on startup in login,"service down for all users, production outage; seen in staging",login,RuntimeError,P1
+Validation message unclear in exchange,"error message confusing, wrong error type raised; regression from last release",exchange,ValueError,P3
+Validation message unclear in api,"error message confusing, wrong error type raised; found in nightly build",api,ValueError,P3
+Minor UI label misaligned in docs,cosmetic layout issue; reported by QA,docs,AssertionError,P4
+Deprecated API warning in calculator,"warning logged, works for now; regression from last release",calculator,DeprecationWarning,P3
+Intermittent network timeout in utils,"flaky external service, retry succeeds; regression from last release",utils,TimeoutError,P3
+Account takeover via duplicate registration in payment,"existing user credentials overwritten, security vulnerability",payment,MissingExceptionHandling,P4
+KeyError crash for unknown item in orders,"unhandled exception, request fails with 500 error",orders,KeyError,P2
+Data loss when saving records in billing,"database corruption, records deleted permanently; regression from last release",billing,IOError,P1
+Report export fails in inventory,"feature broken for many users, workaround exists; found in nightly build",inventory,ValueError,P2
+Typo in ui log message,cosmetic spelling mistake in logs; found in nightly build,ui,AssertionError,P4
+Edge case not handled in search,unusual input gives unexpected but harmless result,search,AssertionError,P3
+Deprecated API warning in api,"warning logged, works for now",api,DeprecationWarning,P3
+Report export fails in calculator,"feature broken for many users, workaround exists; reproducible",calculator,ValueError,P2
+Rounding precision issue in calculator,"integer division loses decimals, minor inaccuracy; reported by QA",calculator,AssertionError,P3
+Docstring outdated in reports,"documentation mismatch, cosmetic",reports,AssertionError,P2
+Validation message unclear in search,"error message confusing, wrong error type raised; found during code review",search,ValueError,P3
+Validation message unclear in calculator,"error message confusing, wrong error type raised; found during code review",calculator,ValueError,P3
+Session not expired in calculator,token remains valid after logout; reproducible,calculator,AssertionError,P2
+Wrong calculation result in orders,"incorrect output, users get wrong numbers; found during code review",orders,AssertionError,P2
+Unused variable warning in ui,"code style, lint warning only; reproducible",ui,SyntaxWarning,P4
+Unhandled ZeroDivisionError in auth,"crash when input is zero, unhandled exception reaches user; reported by QA",auth,ZeroDivisionError,P2
+Edge case not handled in api,unusual input gives unexpected but harmless result; regression from last release,api,AssertionError,P3
+Edge case not handled in api,unusual input gives unexpected but harmless result; reported by QA,api,AssertionError,P3
+Report export fails in inventory,"feature broken for many users, workaround exists",inventory,ValueError,P2
+Minor UI label misaligned in ui,cosmetic layout issue; customer ticket,ui,AssertionError,P2
+Unhandled ZeroDivisionError in api,"crash when input is zero, unhandled exception reaches user; regression from last release",api,ZeroDivisionError,P2
+Typo in utils log message,cosmetic spelling mistake in logs; customer ticket,utils,AssertionError,P4
+Session not expired in orders,token remains valid after logout; found in nightly build,orders,AssertionError,P2
+Wrong calculation result in reports,"incorrect output, users get wrong numbers; customer ticket",reports,AssertionError,P2
+Report export fails in api,"feature broken for many users, workaround exists; customer ticket",api,ValueError,P2
+Docstring outdated in utils,"documentation mismatch, cosmetic; found in nightly build",utils,AssertionError,P4
+Docstring outdated in docs,"documentation mismatch, cosmetic",docs,AssertionError,P4
+Minor UI label misaligned in reports,cosmetic layout issue; reproducible,reports,AssertionError,P4
+Edge case not handled in api,unusual input gives unexpected but harmless result; reproducible,api,AssertionError,P3
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact; found during code review",reports,AssertionError,P4
+Negative stock allowed in security,"inventory goes negative, orders shipped without stock, money lost; customer ticket",security,MissingExceptionHandling,P1
+Unhandled ZeroDivisionError in inventory,"crash when input is zero, unhandled exception reaches user; reproducible",inventory,ZeroDivisionError,P2
+Minor UI label misaligned in ui,cosmetic layout issue,ui,AssertionError,P4
+Customers overcharged at checkout in security,"payment total wrong, money lost, billing incorrect; customer ticket",security,AssertionError,P1
+Application crash on startup in database,"service down for all users, production outage; found during code review",database,RuntimeError,P1
+Intermittent network timeout in utils,"flaky external service, retry succeeds; found during code review",utils,TimeoutError,P3
+Minor UI label misaligned in reports,cosmetic layout issue; regression from last release,reports,AssertionError,P1
+Intermittent network timeout in reports,"flaky external service, retry succeeds; found during code review",reports,TimeoutError,P3
+Typo in utils log message,cosmetic spelling mistake in logs; found in nightly build,utils,AssertionError,P4
+Typo in docs log message,cosmetic spelling mistake in logs; found in nightly build,docs,AssertionError,P4
+Wrong calculation result in inventory,"incorrect output, users get wrong numbers; found during code review",inventory,AssertionError,P2
+Slow response in reports under load,"performance degradation, timeout sometimes; found during code review",reports,TimeoutError,P3
+Slow response in api under load,"performance degradation, timeout sometimes; customer ticket",api,TimeoutError,P3
+Session not expired in orders,token remains valid after logout; reported by QA,orders,AssertionError,P2
+Minor UI label misaligned in docs,cosmetic layout issue; customer ticket,docs,AssertionError,P4
+SQL injection possible in billing search,"security hole, attacker can read database; found during code review",billing,AssertionError,P1
+Validation message unclear in search,"error message confusing, wrong error type raised; found during code review",search,ValueError,P3
+Typo in logging log message,cosmetic spelling mistake in logs; reproducible,logging,AssertionError,P4
+Deprecated API warning in search,"warning logged, works for now; found in nightly build",search,DeprecationWarning,P4
+Security: inventory allows login with empty password,"authentication bypass, unauthorized access to accounts; found in nightly build",inventory,AssertionError,P1
+Slow response in exchange under load,"performance degradation, timeout sometimes; regression from last release",exchange,TimeoutError,P3
+Edge case not handled in search,unusual input gives unexpected but harmless result; customer ticket,search,AssertionError,P3
+Deprecated API warning in utils,"warning logged, works for now; reported by QA",utils,DeprecationWarning,P4
+Deprecated API warning in reports,"warning logged, works for now; found in nightly build",reports,DeprecationWarning,P3
+Wrong calculation result in inventory,"incorrect output, users get wrong numbers; reproducible",inventory,AssertionError,P2
+Intermittent network timeout in reports,"flaky external service, retry succeeds",reports,TimeoutError,P3
+Docstring outdated in docs,"documentation mismatch, cosmetic",docs,AssertionError,P4
+Inconsistent formatting in logging output,"cosmetic alignment issue, no functional impact; found during code review",logging,AssertionError,P4
+Unused variable warning in docs,"code style, lint warning only; found during code review",docs,SyntaxWarning,P4
+Account takeover via duplicate registration in inventory,"existing user credentials overwritten, security vulnerability; found in nightly build",inventory,MissingExceptionHandling,P1
+Deprecated API warning in search,"warning logged, works for now; regression from last release",search,DeprecationWarning,P3
+Report export fails in api,"feature broken for many users, workaround exists; regression from last release",api,ValueError,P2
+Deprecated API warning in api,"warning logged, works for now; found in nightly build",api,DeprecationWarning,P3
+Rounding precision issue in reports,"integer division loses decimals, minor inaccuracy; found in nightly build",reports,AssertionError,P1
+Typo in ui log message,cosmetic spelling mistake in logs; customer ticket,ui,AssertionError,P4
+TypeError when field is missing in cart,"crash on malformed input, feature unusable; found during code review",cart,TypeError,P2
+Deprecated API warning in reports,"warning logged, works for now; seen in staging",reports,DeprecationWarning,P3
+Unused variable warning in utils,"code style, lint warning only; found in nightly build",utils,SyntaxWarning,P4
+SQL injection possible in checkout search,"security hole, attacker can read database; regression from last release",checkout,AssertionError,P1
+Typo in docs log message,cosmetic spelling mistake in logs; reproducible,docs,AssertionError,P4
+Application crash on startup in checkout,"service down for all users, production outage",checkout,RuntimeError,P1
+Data loss when saving records in auth,"database corruption, records deleted permanently; regression from last release",auth,IOError,P3
+Unused variable warning in logging,"code style, lint warning only; regression from last release",logging,SyntaxWarning,P2
+Inconsistent formatting in docs output,"cosmetic alignment issue, no functional impact; reported by QA",docs,AssertionError,P4
+KeyError crash for unknown item in inventory,"unhandled exception, request fails with 500 error; customer ticket",inventory,KeyError,P2
+Security: payment allows login with empty password,"authentication bypass, unauthorized access to accounts; reproducible",payment,AssertionError,P2
+Application crash on startup in auth,"service down for all users, production outage; found during code review",auth,RuntimeError,P1
+Deprecated API warning in calculator,"warning logged, works for now; reproducible",calculator,DeprecationWarning,P3
+Rounding precision issue in api,"integer division loses decimals, minor inaccuracy; reported by QA",api,AssertionError,P3
+Deprecated API warning in exchange,"warning logged, works for now; reported by QA",exchange,DeprecationWarning,P3
+Negative stock allowed in security,"inventory goes negative, orders shipped without stock, money lost; seen in staging",security,MissingExceptionHandling,P1
+Wrong calculation result in calculator,"incorrect output, users get wrong numbers; reproducible",calculator,AssertionError,P2
+Rounding precision issue in reports,"integer division loses decimals, minor inaccuracy; reproducible",reports,AssertionError,P3
+Report export fails in api,"feature broken for many users, workaround exists; found during code review",api,ValueError,P2
+Account takeover via duplicate registration in checkout,"existing user credentials overwritten, security vulnerability; regression from last release",checkout,MissingExceptionHandling,P1
+Empty list crashes reports,"ZeroDivisionError on empty input, crash; seen in staging",reports,ZeroDivisionError,P2
+TypeError when field is missing in cart,"crash on malformed input, feature unusable; customer ticket",cart,TypeError,P2
+Validation message unclear in calculator,"error message confusing, wrong error type raised; seen in staging",calculator,ValueError,P3
+Account takeover via duplicate registration in database,"existing user credentials overwritten, security vulnerability; reported by QA",database,MissingExceptionHandling,P1
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; seen in staging,exchange,AssertionError,P3
+Empty list crashes cart,"ZeroDivisionError on empty input, crash; found during code review",cart,ZeroDivisionError,P2
+Typo in docs log message,cosmetic spelling mistake in logs; reproducible,docs,AssertionError,P4
+Data loss when saving records in payment,"database corruption, records deleted permanently; regression from last release",payment,IOError,P1
+Docstring outdated in reports,"documentation mismatch, cosmetic; found in nightly build",reports,AssertionError,P4
+Validation message unclear in exchange,"error message confusing, wrong error type raised; reported by QA",exchange,ValueError,P3
+Deprecated API warning in utils,"warning logged, works for now; customer ticket",utils,DeprecationWarning,P3
+Empty list crashes orders,"ZeroDivisionError on empty input, crash; reproducible",orders,ZeroDivisionError,P2
+Customers overcharged at checkout in security,"payment total wrong, money lost, billing incorrect; seen in staging",security,AssertionError,P1
+Slow response in api under load,"performance degradation, timeout sometimes; reproducible",api,TimeoutError,P3
+Application crash on startup in database,"service down for all users, production outage; seen in staging",database,RuntimeError,P1
+Inconsistent formatting in logging output,"cosmetic alignment issue, no functional impact; reported by QA",logging,AssertionError,P4
+Intermittent network timeout in api,"flaky external service, retry succeeds",api,TimeoutError,P3
+Validation message unclear in search,"error message confusing, wrong error type raised; seen in staging",search,ValueError,P3
+Unhandled ZeroDivisionError in orders,"crash when input is zero, unhandled exception reaches user",orders,ZeroDivisionError,P2
+Intermittent network timeout in calculator,"flaky external service, retry succeeds; reported by QA",calculator,TimeoutError,P3
+Application crash on startup in checkout,"service down for all users, production outage; found in nightly build",checkout,RuntimeError,P1
+Unhandled ZeroDivisionError in calculator,"crash when input is zero, unhandled exception reaches user; found during code review",calculator,ZeroDivisionError,P2
+Password stored in plain text by checkout,"credentials leak, security compliance failure; reproducible",checkout,AssertionError,P1
+Security: security allows login with empty password,"authentication bypass, unauthorized access to accounts; reproducible",security,AssertionError,P1
+Edge case not handled in api,unusual input gives unexpected but harmless result; found during code review,api,AssertionError,P3
+Wrong calculation result in calculator,"incorrect output, users get wrong numbers; customer ticket",calculator,AssertionError,P2
+Unused variable warning in utils,"code style, lint warning only; reproducible",utils,SyntaxWarning,P4
+Account takeover via duplicate registration in checkout,"existing user credentials overwritten, security vulnerability; found during code review",checkout,MissingExceptionHandling,P1
+Validation message unclear in search,"error message confusing, wrong error type raised; regression from last release",search,ValueError,P3
+KeyError crash for unknown item in calculator,"unhandled exception, request fails with 500 error; seen in staging",calculator,KeyError,P2
+Slow response in search under load,"performance degradation, timeout sometimes; customer ticket",search,TimeoutError,P3
+KeyError crash for unknown item in orders,"unhandled exception, request fails with 500 error; customer ticket",orders,KeyError,P2
+Deprecated API warning in calculator,"warning logged, works for now",calculator,DeprecationWarning,P3
+Report export fails in auth,"feature broken for many users, workaround exists; reproducible",auth,ValueError,P2
+Docstring outdated in logging,"documentation mismatch, cosmetic",logging,AssertionError,P4
+TypeError when field is missing in auth,"crash on malformed input, feature unusable; reported by QA",auth,TypeError,P2
+Unhandled ZeroDivisionError in orders,"crash when input is zero, unhandled exception reaches user; reported by QA",orders,ZeroDivisionError,P2
+Application crash on startup in login,"service down for all users, production outage; seen in staging",login,RuntimeError,P1
+Edge case not handled in api,unusual input gives unexpected but harmless result; reported by QA,api,AssertionError,P3
+Empty list crashes api,"ZeroDivisionError on empty input, crash; reproducible",api,ZeroDivisionError,P2
+Edge case not handled in reports,unusual input gives unexpected but harmless result,reports,AssertionError,P3
+SQL injection possible in login search,"security hole, attacker can read database; customer ticket",login,AssertionError,P1
+Negative stock allowed in inventory,"inventory goes negative, orders shipped without stock, money lost; customer ticket",inventory,MissingExceptionHandling,P1
+TypeError when field is missing in reports,"crash on malformed input, feature unusable; reproducible",reports,TypeError,P2
+Rounding precision issue in utils,"integer division loses decimals, minor inaccuracy; seen in staging",utils,AssertionError,P3
+Report export fails in cart,"feature broken for many users, workaround exists; found in nightly build",cart,ValueError,P2
+Deprecated API warning in exchange,"warning logged, works for now; reproducible",exchange,DeprecationWarning,P3
+Customers overcharged at checkout in database,"payment total wrong, money lost, billing incorrect; found during code review",database,AssertionError,P1
+Account takeover via duplicate registration in billing,"existing user credentials overwritten, security vulnerability; reproducible",billing,MissingExceptionHandling,P1
+Unused variable warning in ui,"code style, lint warning only; found during code review",ui,SyntaxWarning,P4
+Rounding precision issue in search,"integer division loses decimals, minor inaccuracy; regression from last release",search,AssertionError,P3
+Empty list crashes reports,"ZeroDivisionError on empty input, crash; customer ticket",reports,ZeroDivisionError,P2
+Application crash on startup in login,"service down for all users, production outage; reported by QA",login,RuntimeError,P1
+Edge case not handled in reports,unusual input gives unexpected but harmless result; customer ticket,reports,AssertionError,P3
+Customers overcharged at checkout in inventory,"payment total wrong, money lost, billing incorrect; regression from last release",inventory,AssertionError,P3
+Unused variable warning in docs,"code style, lint warning only",docs,SyntaxWarning,P4
+KeyError crash for unknown item in orders,"unhandled exception, request fails with 500 error",orders,KeyError,P2
+Inconsistent formatting in docs output,"cosmetic alignment issue, no functional impact",docs,AssertionError,P4
+TypeError when field is missing in auth,"crash on malformed input, feature unusable; found during code review",auth,TypeError,P2
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact; found in nightly build",reports,AssertionError,P4
+Negative stock allowed in database,"inventory goes negative, orders shipped without stock, money lost; seen in staging",database,MissingExceptionHandling,P1
+Edge case not handled in calculator,unusual input gives unexpected but harmless result; customer ticket,calculator,AssertionError,P3
+Report export fails in inventory,"feature broken for many users, workaround exists; seen in staging",inventory,ValueError,P2
+Inconsistent formatting in utils output,"cosmetic alignment issue, no functional impact; reported by QA",utils,AssertionError,P4
+Wrong calculation result in api,"incorrect output, users get wrong numbers; found during code review",api,AssertionError,P2
+Docstring outdated in logging,"documentation mismatch, cosmetic; reproducible",logging,AssertionError,P1
+Slow response in calculator under load,"performance degradation, timeout sometimes",calculator,TimeoutError,P3
+Slow response in utils under load,"performance degradation, timeout sometimes; reported by QA",utils,TimeoutError,P3
+Typo in docs log message,cosmetic spelling mistake in logs; customer ticket,docs,AssertionError,P4
+Deprecated API warning in exchange,"warning logged, works for now; seen in staging",exchange,DeprecationWarning,P3
+Slow response in search under load,"performance degradation, timeout sometimes; regression from last release",search,TimeoutError,P3
+Empty list crashes api,"ZeroDivisionError on empty input, crash; seen in staging",api,ZeroDivisionError,P2
+Minor UI label misaligned in reports,cosmetic layout issue; regression from last release,reports,AssertionError,P4
+Intermittent network timeout in api,"flaky external service, retry succeeds; regression from last release",api,TimeoutError,P3
+Slow response in utils under load,"performance degradation, timeout sometimes; reproducible",utils,TimeoutError,P3
+Security: security allows login with empty password,"authentication bypass, unauthorized access to accounts; reported by QA",security,AssertionError,P1
+Intermittent network timeout in search,"flaky external service, retry succeeds; reproducible",search,TimeoutError,P3
+Intermittent network timeout in reports,"flaky external service, retry succeeds; seen in staging",reports,TimeoutError,P3
+Deprecated API warning in search,"warning logged, works for now; reproducible",search,DeprecationWarning,P3
+Deprecated API warning in reports,"warning logged, works for now",reports,DeprecationWarning,P3
+Minor UI label misaligned in logging,cosmetic layout issue; seen in staging,logging,AssertionError,P4
+Validation message unclear in calculator,"error message confusing, wrong error type raised; reported by QA",calculator,ValueError,P3
+Rounding precision issue in search,"integer division loses decimals, minor inaccuracy; found during code review",search,AssertionError,P3
+Unused variable warning in utils,"code style, lint warning only; regression from last release",utils,SyntaxWarning,P4
+Empty list crashes auth,"ZeroDivisionError on empty input, crash; found in nightly build",auth,ZeroDivisionError,P3
+SQL injection possible in security search,"security hole, attacker can read database",security,AssertionError,P1
+Minor UI label misaligned in docs,cosmetic layout issue,docs,AssertionError,P4
+Intermittent network timeout in exchange,"flaky external service, retry succeeds; seen in staging",exchange,TimeoutError,P3
+Rounding precision issue in api,"integer division loses decimals, minor inaccuracy; customer ticket",api,AssertionError,P3
+Intermittent network timeout in calculator,"flaky external service, retry succeeds; found in nightly build",calculator,TimeoutError,P3
+Report export fails in cart,"feature broken for many users, workaround exists",cart,ValueError,P2
+Unhandled ZeroDivisionError in cart,"crash when input is zero, unhandled exception reaches user; reproducible",cart,ZeroDivisionError,P2
+Validation message unclear in search,"error message confusing, wrong error type raised; reported by QA",search,ValueError,P3
+Password stored in plain text by database,"credentials leak, security compliance failure; customer ticket",database,AssertionError,P1
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact",reports,AssertionError,P4
+Account takeover via duplicate registration in checkout,"existing user credentials overwritten, security vulnerability; reproducible",checkout,MissingExceptionHandling,P1
+Report export fails in calculator,"feature broken for many users, workaround exists",calculator,ValueError,P2
+Docstring outdated in utils,"documentation mismatch, cosmetic; customer ticket",utils,AssertionError,P4
+Validation message unclear in search,"error message confusing, wrong error type raised; regression from last release",search,ValueError,P3
+Typo in logging log message,cosmetic spelling mistake in logs; found during code review,logging,AssertionError,P4
+Typo in docs log message,cosmetic spelling mistake in logs,docs,AssertionError,P4
+Report export fails in orders,"feature broken for many users, workaround exists",orders,ValueError,P2
+KeyError crash for unknown item in auth,"unhandled exception, request fails with 500 error",auth,KeyError,P2
+Docstring outdated in docs,"documentation mismatch, cosmetic; found in nightly build",docs,AssertionError,P4
+Inconsistent formatting in logging output,"cosmetic alignment issue, no functional impact; regression from last release",logging,AssertionError,P4
+Data loss when saving records in payment,"database corruption, records deleted permanently",payment,IOError,P1
+SQL injection possible in inventory search,"security hole, attacker can read database; customer ticket",inventory,AssertionError,P1
+Rounding precision issue in calculator,"integer division loses decimals, minor inaccuracy",calculator,AssertionError,P3
+Validation message unclear in exchange,"error message confusing, wrong error type raised; seen in staging",exchange,ValueError,P3
+Session not expired in api,token remains valid after logout; customer ticket,api,AssertionError,P2
+Slow response in api under load,"performance degradation, timeout sometimes; reported by QA",api,TimeoutError,P3
+Unused variable warning in logging,"code style, lint warning only; customer ticket",logging,SyntaxWarning,P4
+Session not expired in inventory,token remains valid after logout; found in nightly build,inventory,AssertionError,P2
+Docstring outdated in logging,"documentation mismatch, cosmetic; found in nightly build",logging,AssertionError,P4
+Application crash on startup in login,"service down for all users, production outage; customer ticket",login,RuntimeError,P1
+Edge case not handled in reports,unusual input gives unexpected but harmless result; reproducible,reports,AssertionError,P3
+Unused variable warning in ui,"code style, lint warning only; reported by QA",ui,SyntaxWarning,P4
+Application crash on startup in checkout,"service down for all users, production outage; found during code review",checkout,RuntimeError,P1
+Rounding precision issue in api,"integer division loses decimals, minor inaccuracy; found in nightly build",api,AssertionError,P3
+Intermittent network timeout in api,"flaky external service, retry succeeds; found during code review",api,TimeoutError,P3
+Unhandled ZeroDivisionError in cart,"crash when input is zero, unhandled exception reaches user; found during code review",cart,ZeroDivisionError,P4
+KeyError crash for unknown item in orders,"unhandled exception, request fails with 500 error; reproducible",orders,KeyError,P2
+Docstring outdated in docs,"documentation mismatch, cosmetic; customer ticket",docs,AssertionError,P4
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; regression from last release,exchange,AssertionError,P3
+TypeError when field is missing in reports,"crash on malformed input, feature unusable; seen in staging",reports,TypeError,P2
+Password stored in plain text by security,"credentials leak, security compliance failure; customer ticket",security,AssertionError,P1
+Unused variable warning in docs,"code style, lint warning only; customer ticket",docs,SyntaxWarning,P4
+Report export fails in reports,"feature broken for many users, workaround exists; found in nightly build",reports,ValueError,P2
+Unhandled ZeroDivisionError in reports,"crash when input is zero, unhandled exception reaches user; regression from last release",reports,ZeroDivisionError,P2
+TypeError when field is missing in calculator,"crash on malformed input, feature unusable",calculator,TypeError,P4
+Unhandled ZeroDivisionError in auth,"crash when input is zero, unhandled exception reaches user; customer ticket",auth,ZeroDivisionError,P2
+Docstring outdated in utils,"documentation mismatch, cosmetic; found during code review",utils,AssertionError,P4
+Data loss when saving records in database,"database corruption, records deleted permanently; seen in staging",database,IOError,P1
+Wrong calculation result in auth,"incorrect output, users get wrong numbers; seen in staging",auth,AssertionError,P2
+Account takeover via duplicate registration in security,"existing user credentials overwritten, security vulnerability; reproducible",security,MissingExceptionHandling,P1
+Intermittent network timeout in reports,"flaky external service, retry succeeds; found during code review",reports,TimeoutError,P3
+Rounding precision issue in calculator,"integer division loses decimals, minor inaccuracy; reproducible",calculator,AssertionError,P3
+Unused variable warning in utils,"code style, lint warning only; customer ticket",utils,SyntaxWarning,P4
+Report export fails in orders,"feature broken for many users, workaround exists; found in nightly build",orders,ValueError,P2
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; found in nightly build,exchange,AssertionError,P3
+Unhandled ZeroDivisionError in orders,"crash when input is zero, unhandled exception reaches user; seen in staging",orders,ZeroDivisionError,P2
+Unused variable warning in docs,"code style, lint warning only; reported by QA",docs,SyntaxWarning,P4
+Intermittent network timeout in utils,"flaky external service, retry succeeds; regression from last release",utils,TimeoutError,P3
+Edge case not handled in api,unusual input gives unexpected but harmless result; found during code review,api,AssertionError,P3
+Data loss when saving records in auth,"database corruption, records deleted permanently; seen in staging",auth,IOError,P1
+Negative stock allowed in database,"inventory goes negative, orders shipped without stock, money lost; found during code review",database,MissingExceptionHandling,P1
+Validation message unclear in exchange,"error message confusing, wrong error type raised",exchange,ValueError,P3
+Typo in logging log message,cosmetic spelling mistake in logs; reproducible,logging,AssertionError,P4
+Minor UI label misaligned in reports,cosmetic layout issue; customer ticket,reports,AssertionError,P4
+Report export fails in orders,"feature broken for many users, workaround exists; found in nightly build",orders,ValueError,P2
+Slow response in reports under load,"performance degradation, timeout sometimes; found in nightly build",reports,TimeoutError,P3
+TypeError when field is missing in auth,"crash on malformed input, feature unusable; regression from last release",auth,TypeError,P2
+Validation message unclear in search,"error message confusing, wrong error type raised; found in nightly build",search,ValueError,P3
+Report export fails in cart,"feature broken for many users, workaround exists; found during code review",cart,ValueError,P2
+Inconsistent formatting in docs output,"cosmetic alignment issue, no functional impact; reproducible",docs,AssertionError,P1
+Docstring outdated in utils,"documentation mismatch, cosmetic; found in nightly build",utils,AssertionError,P4
+Docstring outdated in logging,"documentation mismatch, cosmetic; regression from last release",logging,AssertionError,P4
+Session not expired in api,token remains valid after logout; regression from last release,api,AssertionError,P2
+Password stored in plain text by database,"credentials leak, security compliance failure; seen in staging",database,AssertionError,P1
+Slow response in calculator under load,"performance degradation, timeout sometimes; customer ticket",calculator,TimeoutError,P3
+Wrong calculation result in reports,"incorrect output, users get wrong numbers; found in nightly build",reports,AssertionError,P2
+Session not expired in calculator,token remains valid after logout; seen in staging,calculator,AssertionError,P2
+Slow response in exchange under load,"performance degradation, timeout sometimes; reported by QA",exchange,TimeoutError,P3
+Inconsistent formatting in utils output,"cosmetic alignment issue, no functional impact; customer ticket",utils,AssertionError,P4
+Typo in utils log message,cosmetic spelling mistake in logs; customer ticket,utils,AssertionError,P4
+Docstring outdated in ui,"documentation mismatch, cosmetic; reproducible",ui,AssertionError,P1
+Session not expired in api,token remains valid after logout; customer ticket,api,AssertionError,P2
+Minor UI label misaligned in docs,cosmetic layout issue; seen in staging,docs,AssertionError,P4
+Session not expired in reports,token remains valid after logout; customer ticket,reports,AssertionError,P2
+SQL injection possible in billing search,"security hole, attacker can read database; regression from last release",billing,AssertionError,P1
+Password stored in plain text by security,"credentials leak, security compliance failure; seen in staging",security,AssertionError,P1
+Unhandled ZeroDivisionError in inventory,"crash when input is zero, unhandled exception reaches user",inventory,ZeroDivisionError,P2
+KeyError crash for unknown item in calculator,"unhandled exception, request fails with 500 error; regression from last release",calculator,KeyError,P2
+TypeError when field is missing in orders,"crash on malformed input, feature unusable; reported by QA",orders,TypeError,P2
+TypeError when field is missing in cart,"crash on malformed input, feature unusable; seen in staging",cart,TypeError,P2
+KeyError crash for unknown item in reports,"unhandled exception, request fails with 500 error; found in nightly build",reports,KeyError,P2
+Deprecated API warning in search,"warning logged, works for now; regression from last release",search,DeprecationWarning,P3
+KeyError crash for unknown item in reports,"unhandled exception, request fails with 500 error; reproducible",reports,KeyError,P2
+Report export fails in reports,"feature broken for many users, workaround exists; regression from last release",reports,ValueError,P2
+Deprecated API warning in exchange,"warning logged, works for now; seen in staging",exchange,DeprecationWarning,P3
+Edge case not handled in utils,unusual input gives unexpected but harmless result; seen in staging,utils,AssertionError,P3
+Data loss when saving records in payment,"database corruption, records deleted permanently",payment,IOError,P1
+Data loss when saving records in inventory,"database corruption, records deleted permanently",inventory,IOError,P1
+Minor UI label misaligned in logging,cosmetic layout issue,logging,AssertionError,P4
+Edge case not handled in api,unusual input gives unexpected but harmless result; found in nightly build,api,AssertionError,P3
+Validation message unclear in search,"error message confusing, wrong error type raised; regression from last release",search,ValueError,P3
+Rounding precision issue in api,"integer division loses decimals, minor inaccuracy; seen in staging",api,AssertionError,P3
+Rounding precision issue in calculator,"integer division loses decimals, minor inaccuracy",calculator,AssertionError,P3
+Password stored in plain text by payment,"credentials leak, security compliance failure; found during code review",payment,AssertionError,P1
+Wrong calculation result in reports,"incorrect output, users get wrong numbers; found during code review",reports,AssertionError,P2
+Session not expired in cart,token remains valid after logout; customer ticket,cart,AssertionError,P2
+Intermittent network timeout in calculator,"flaky external service, retry succeeds; found during code review",calculator,TimeoutError,P3
+Deprecated API warning in reports,"warning logged, works for now; reported by QA",reports,DeprecationWarning,P3
+Minor UI label misaligned in reports,cosmetic layout issue; found during code review,reports,AssertionError,P4
+Inconsistent formatting in utils output,"cosmetic alignment issue, no functional impact; found in nightly build",utils,AssertionError,P4
+Account takeover via duplicate registration in auth,"existing user credentials overwritten, security vulnerability; found during code review",auth,MissingExceptionHandling,P1
+Rounding precision issue in reports,"integer division loses decimals, minor inaccuracy; seen in staging",reports,AssertionError,P3
+Validation message unclear in exchange,"error message confusing, wrong error type raised; reported by QA",exchange,ValueError,P3
+Unhandled ZeroDivisionError in reports,"crash when input is zero, unhandled exception reaches user; regression from last release",reports,ZeroDivisionError,P2
+Rounding precision issue in reports,"integer division loses decimals, minor inaccuracy; found in nightly build",reports,AssertionError,P3
+Session not expired in api,token remains valid after logout; reproducible,api,AssertionError,P2
+KeyError crash for unknown item in cart,"unhandled exception, request fails with 500 error; found during code review",cart,KeyError,P2
+Unhandled ZeroDivisionError in api,"crash when input is zero, unhandled exception reaches user; customer ticket",api,ZeroDivisionError,P2
+Validation message unclear in exchange,"error message confusing, wrong error type raised; reproducible",exchange,ValueError,P3
+Minor UI label misaligned in reports,cosmetic layout issue; found during code review,reports,AssertionError,P4
+TypeError when field is missing in reports,"crash on malformed input, feature unusable",reports,TypeError,P2
+KeyError crash for unknown item in orders,"unhandled exception, request fails with 500 error; customer ticket",orders,KeyError,P2
+Typo in reports log message,cosmetic spelling mistake in logs; found during code review,reports,AssertionError,P4
+Slow response in api under load,"performance degradation, timeout sometimes; regression from last release",api,TimeoutError,P3
+Unhandled ZeroDivisionError in reports,"crash when input is zero, unhandled exception reaches user; seen in staging",reports,ZeroDivisionError,P2
+Slow response in calculator under load,"performance degradation, timeout sometimes; reported by QA",calculator,TimeoutError,P3
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact; regression from last release",reports,AssertionError,P4
+Empty list crashes orders,"ZeroDivisionError on empty input, crash; reported by QA",orders,ZeroDivisionError,P2
+KeyError crash for unknown item in cart,"unhandled exception, request fails with 500 error",cart,KeyError,P2
+Unused variable warning in logging,"code style, lint warning only; regression from last release",logging,SyntaxWarning,P4
+Intermittent network timeout in api,"flaky external service, retry succeeds; reproducible",api,TimeoutError,P3
+TypeError when field is missing in api,"crash on malformed input, feature unusable",api,TypeError,P2
+Negative stock allowed in database,"inventory goes negative, orders shipped without stock, money lost; reproducible",database,MissingExceptionHandling,P1
+Unhandled ZeroDivisionError in api,"crash when input is zero, unhandled exception reaches user; customer ticket",api,ZeroDivisionError,P2
+Password stored in plain text by billing,"credentials leak, security compliance failure; reproducible",billing,AssertionError,P1
+Report export fails in auth,"feature broken for many users, workaround exists; reproducible",auth,ValueError,P2
+Empty list crashes reports,"ZeroDivisionError on empty input, crash",reports,ZeroDivisionError,P2
+Session not expired in auth,token remains valid after logout; customer ticket,auth,AssertionError,P2
+Validation message unclear in reports,"error message confusing, wrong error type raised; reported by QA",reports,ValueError,P3
+Rounding precision issue in utils,"integer division loses decimals, minor inaccuracy; found during code review",utils,AssertionError,P1
+Data loss when saving records in login,"database corruption, records deleted permanently; reported by QA",login,IOError,P1
+Wrong calculation result in orders,"incorrect output, users get wrong numbers",orders,AssertionError,P4
+Password stored in plain text by auth,"credentials leak, security compliance failure; found in nightly build",auth,AssertionError,P3
+Password stored in plain text by payment,"credentials leak, security compliance failure; seen in staging",payment,AssertionError,P1
+Slow response in reports under load,"performance degradation, timeout sometimes; found in nightly build",reports,TimeoutError,P3
+Docstring outdated in utils,"documentation mismatch, cosmetic",utils,AssertionError,P4
+Deprecated API warning in reports,"warning logged, works for now; seen in staging",reports,DeprecationWarning,P3
+Deprecated API warning in calculator,"warning logged, works for now; found during code review",calculator,DeprecationWarning,P3
+Wrong calculation result in calculator,"incorrect output, users get wrong numbers; customer ticket",calculator,AssertionError,P2
+Password stored in plain text by database,"credentials leak, security compliance failure; seen in staging",database,AssertionError,P1
+Typo in logging log message,cosmetic spelling mistake in logs,logging,AssertionError,P4
+Unhandled ZeroDivisionError in cart,"crash when input is zero, unhandled exception reaches user; reported by QA",cart,ZeroDivisionError,P2
+SQL injection possible in auth search,"security hole, attacker can read database; customer ticket",auth,AssertionError,P1
+Deprecated API warning in api,"warning logged, works for now; found in nightly build",api,DeprecationWarning,P3
+Data loss when saving records in security,"database corruption, records deleted permanently; reproducible",security,IOError,P1
+Session not expired in inventory,token remains valid after logout; seen in staging,inventory,AssertionError,P2
+Intermittent network timeout in calculator,"flaky external service, retry succeeds; regression from last release",calculator,TimeoutError,P3
+Docstring outdated in reports,"documentation mismatch, cosmetic; found during code review",reports,AssertionError,P4
+Docstring outdated in ui,"documentation mismatch, cosmetic",ui,AssertionError,P4
+TypeError when field is missing in api,"crash on malformed input, feature unusable; found during code review",api,TypeError,P2
+Password stored in plain text by login,"credentials leak, security compliance failure; found in nightly build",login,AssertionError,P1
+Deprecated API warning in calculator,"warning logged, works for now; customer ticket",calculator,DeprecationWarning,P3
+Empty list crashes cart,"ZeroDivisionError on empty input, crash; found during code review",cart,ZeroDivisionError,P2
+Unhandled ZeroDivisionError in calculator,"crash when input is zero, unhandled exception reaches user",calculator,ZeroDivisionError,P3
+TypeError when field is missing in calculator,"crash on malformed input, feature unusable; customer ticket",calculator,TypeError,P2
+Report export fails in api,"feature broken for many users, workaround exists; seen in staging",api,ValueError,P2
+SQL injection possible in login search,"security hole, attacker can read database; reproducible",login,AssertionError,P1
+Typo in docs log message,cosmetic spelling mistake in logs; seen in staging,docs,AssertionError,P4
+Edge case not handled in reports,unusual input gives unexpected but harmless result; customer ticket,reports,AssertionError,P3
+Slow response in reports under load,"performance degradation, timeout sometimes; found in nightly build",reports,TimeoutError,P3
+Unhandled ZeroDivisionError in inventory,"crash when input is zero, unhandled exception reaches user; found during code review",inventory,ZeroDivisionError,P2
+Empty list crashes calculator,"ZeroDivisionError on empty input, crash; regression from last release",calculator,ZeroDivisionError,P2
+Validation message unclear in exchange,"error message confusing, wrong error type raised",exchange,ValueError,P3
+Application crash on startup in auth,"service down for all users, production outage; reproducible",auth,RuntimeError,P1
+Minor UI label misaligned in docs,cosmetic layout issue; found during code review,docs,AssertionError,P4
+Unused variable warning in logging,"code style, lint warning only; regression from last release",logging,SyntaxWarning,P4
+KeyError crash for unknown item in reports,"unhandled exception, request fails with 500 error; found in nightly build",reports,KeyError,P2
+Deprecated API warning in api,"warning logged, works for now; regression from last release",api,DeprecationWarning,P3
+TypeError when field is missing in auth,"crash on malformed input, feature unusable; reproducible",auth,TypeError,P2
+Data loss when saving records in payment,"database corruption, records deleted permanently; reported by QA",payment,IOError,P1
+Minor UI label misaligned in logging,cosmetic layout issue; found in nightly build,logging,AssertionError,P4
+Typo in utils log message,cosmetic spelling mistake in logs; customer ticket,utils,AssertionError,P4
+Slow response in search under load,"performance degradation, timeout sometimes; found during code review",search,TimeoutError,P3
+Rounding precision issue in api,"integer division loses decimals, minor inaccuracy",api,AssertionError,P3
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; found during code review,exchange,AssertionError,P3
+Intermittent network timeout in utils,"flaky external service, retry succeeds; seen in staging",utils,TimeoutError,P3
+Data loss when saving records in database,"database corruption, records deleted permanently; reported by QA",database,IOError,P1
+Deprecated API warning in utils,"warning logged, works for now; reproducible",utils,DeprecationWarning,P3
+Minor UI label misaligned in ui,cosmetic layout issue; regression from last release,ui,AssertionError,P3
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; regression from last release,exchange,AssertionError,P3
+Wrong calculation result in reports,"incorrect output, users get wrong numbers; customer ticket",reports,AssertionError,P2
+Unhandled ZeroDivisionError in reports,"crash when input is zero, unhandled exception reaches user; found during code review",reports,ZeroDivisionError,P2
+Typo in ui log message,cosmetic spelling mistake in logs; customer ticket,ui,AssertionError,P4
+TypeError when field is missing in reports,"crash on malformed input, feature unusable",reports,TypeError,P2
+Unhandled ZeroDivisionError in reports,"crash when input is zero, unhandled exception reaches user",reports,ZeroDivisionError,P2
+TypeError when field is missing in calculator,"crash on malformed input, feature unusable; seen in staging",calculator,TypeError,P2
+SQL injection possible in login search,"security hole, attacker can read database; customer ticket",login,AssertionError,P1
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact; customer ticket",reports,AssertionError,P4
+Wrong calculation result in reports,"incorrect output, users get wrong numbers; found during code review",reports,AssertionError,P2
+Slow response in utils under load,"performance degradation, timeout sometimes; found during code review",utils,TimeoutError,P3
+Data loss when saving records in inventory,"database corruption, records deleted permanently; found during code review",inventory,IOError,P1
+Data loss when saving records in checkout,"database corruption, records deleted permanently; seen in staging",checkout,IOError,P1
+Edge case not handled in reports,unusual input gives unexpected but harmless result; regression from last release,reports,AssertionError,P3
+TypeError when field is missing in cart,"crash on malformed input, feature unusable; reproducible",cart,TypeError,P2
+Edge case not handled in api,unusual input gives unexpected but harmless result; reproducible,api,AssertionError,P3
+Wrong calculation result in api,"incorrect output, users get wrong numbers; found in nightly build",api,AssertionError,P2
+Unused variable warning in ui,"code style, lint warning only; reproducible",ui,SyntaxWarning,P4
+Application crash on startup in login,"service down for all users, production outage; customer ticket",login,RuntimeError,P1
+Validation message unclear in exchange,"error message confusing, wrong error type raised; found during code review",exchange,ValueError,P3
+Wrong calculation result in cart,"incorrect output, users get wrong numbers; customer ticket",cart,AssertionError,P2
+Validation message unclear in search,"error message confusing, wrong error type raised; reproducible",search,ValueError,P3
+Unused variable warning in ui,"code style, lint warning only; reported by QA",ui,SyntaxWarning,P4
+KeyError crash for unknown item in auth,"unhandled exception, request fails with 500 error",auth,KeyError,P2
+Wrong calculation result in reports,"incorrect output, users get wrong numbers",reports,AssertionError,P2
+Unhandled ZeroDivisionError in api,"crash when input is zero, unhandled exception reaches user; found in nightly build",api,ZeroDivisionError,P2
+Data loss when saving records in billing,"database corruption, records deleted permanently",billing,IOError,P1
+Validation message unclear in exchange,"error message confusing, wrong error type raised; seen in staging",exchange,ValueError,P3
+Report export fails in auth,"feature broken for many users, workaround exists; reported by QA",auth,ValueError,P2
+Validation message unclear in exchange,"error message confusing, wrong error type raised; found during code review",exchange,ValueError,P3
+Data loss when saving records in billing,"database corruption, records deleted permanently; reported by QA",billing,IOError,P1
+TypeError when field is missing in auth,"crash on malformed input, feature unusable",auth,TypeError,P2
+Typo in logging log message,cosmetic spelling mistake in logs; reproducible,logging,AssertionError,P4
+Unused variable warning in utils,"code style, lint warning only; customer ticket",utils,SyntaxWarning,P4
+Slow response in calculator under load,"performance degradation, timeout sometimes; found in nightly build",calculator,TimeoutError,P3
+Slow response in search under load,"performance degradation, timeout sometimes; found in nightly build",search,TimeoutError,P3
+TypeError when field is missing in auth,"crash on malformed input, feature unusable; seen in staging",auth,TypeError,P2
+Password stored in plain text by auth,"credentials leak, security compliance failure; customer ticket",auth,AssertionError,P1
+Slow response in reports under load,"performance degradation, timeout sometimes; reproducible",reports,TimeoutError,P3
+Minor UI label misaligned in utils,cosmetic layout issue; found in nightly build,utils,AssertionError,P4
+Validation message unclear in api,"error message confusing, wrong error type raised; found during code review",api,ValueError,P1
+Intermittent network timeout in utils,"flaky external service, retry succeeds; reproducible",utils,TimeoutError,P3
+Wrong calculation result in orders,"incorrect output, users get wrong numbers; seen in staging",orders,AssertionError,P2
+Validation message unclear in utils,"error message confusing, wrong error type raised; reproducible",utils,ValueError,P3
+Unused variable warning in utils,"code style, lint warning only; found during code review",utils,SyntaxWarning,P4
+Minor UI label misaligned in docs,cosmetic layout issue; found in nightly build,docs,AssertionError,P4
+Report export fails in inventory,"feature broken for many users, workaround exists",inventory,ValueError,P2
+Deprecated API warning in calculator,"warning logged, works for now; reported by QA",calculator,DeprecationWarning,P4
+Customers overcharged at checkout in inventory,"payment total wrong, money lost, billing incorrect; found during code review",inventory,AssertionError,P1
+Session not expired in inventory,token remains valid after logout; found in nightly build,inventory,AssertionError,P2
+Application crash on startup in login,"service down for all users, production outage; found in nightly build",login,RuntimeError,P1
+Customers overcharged at checkout in auth,"payment total wrong, money lost, billing incorrect; found in nightly build",auth,AssertionError,P1
+Slow response in api under load,"performance degradation, timeout sometimes; seen in staging",api,TimeoutError,P3
+Negative stock allowed in login,"inventory goes negative, orders shipped without stock, money lost; regression from last release",login,MissingExceptionHandling,P1
+Validation message unclear in calculator,"error message confusing, wrong error type raised; seen in staging",calculator,ValueError,P3
+Minor UI label misaligned in logging,cosmetic layout issue; regression from last release,logging,AssertionError,P4
+Session not expired in auth,token remains valid after logout; reproducible,auth,AssertionError,P2
+TypeError when field is missing in inventory,"crash on malformed input, feature unusable; customer ticket",inventory,TypeError,P2
+Deprecated API warning in reports,"warning logged, works for now; customer ticket",reports,DeprecationWarning,P1
+Session not expired in inventory,token remains valid after logout; customer ticket,inventory,AssertionError,P2
+Unused variable warning in utils,"code style, lint warning only; seen in staging",utils,SyntaxWarning,P4
+Inconsistent formatting in ui output,"cosmetic alignment issue, no functional impact; found during code review",ui,AssertionError,P4
+Wrong calculation result in orders,"incorrect output, users get wrong numbers; regression from last release",orders,AssertionError,P2
+Unhandled ZeroDivisionError in inventory,"crash when input is zero, unhandled exception reaches user; found in nightly build",inventory,ZeroDivisionError,P2
+Deprecated API warning in calculator,"warning logged, works for now; found in nightly build",calculator,DeprecationWarning,P3
+Report export fails in api,"feature broken for many users, workaround exists; found during code review",api,ValueError,P2
+Unhandled ZeroDivisionError in auth,"crash when input is zero, unhandled exception reaches user; regression from last release",auth,ZeroDivisionError,P2
+Unhandled ZeroDivisionError in inventory,"crash when input is zero, unhandled exception reaches user; seen in staging",inventory,ZeroDivisionError,P2
+Rounding precision issue in search,"integer division loses decimals, minor inaccuracy; customer ticket",search,AssertionError,P3
+Empty list crashes api,"ZeroDivisionError on empty input, crash; customer ticket",api,ZeroDivisionError,P2
+Rounding precision issue in calculator,"integer division loses decimals, minor inaccuracy; reported by QA",calculator,AssertionError,P3
+Unhandled ZeroDivisionError in calculator,"crash when input is zero, unhandled exception reaches user; found during code review",calculator,ZeroDivisionError,P2
+Deprecated API warning in utils,"warning logged, works for now; found during code review",utils,DeprecationWarning,P3
+Wrong calculation result in calculator,"incorrect output, users get wrong numbers; customer ticket",calculator,AssertionError,P2
+TypeError when field is missing in calculator,"crash on malformed input, feature unusable; regression from last release",calculator,TypeError,P2
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact; seen in staging",reports,AssertionError,P4
+Wrong calculation result in cart,"incorrect output, users get wrong numbers; regression from last release",cart,AssertionError,P2
+Account takeover via duplicate registration in security,"existing user credentials overwritten, security vulnerability; reported by QA",security,MissingExceptionHandling,P1
+Session not expired in cart,token remains valid after logout; seen in staging,cart,AssertionError,P2
+Customers overcharged at checkout in auth,"payment total wrong, money lost, billing incorrect; reproducible",auth,AssertionError,P1
+Deprecated API warning in search,"warning logged, works for now; customer ticket",search,DeprecationWarning,P3
+Intermittent network timeout in utils,"flaky external service, retry succeeds; reported by QA",utils,TimeoutError,P3
+Wrong calculation result in orders,"incorrect output, users get wrong numbers; found in nightly build",orders,AssertionError,P2
+Edge case not handled in utils,unusual input gives unexpected but harmless result; reproducible,utils,AssertionError,P4
+Customers overcharged at checkout in database,"payment total wrong, money lost, billing incorrect; seen in staging",database,AssertionError,P1
+Typo in logging log message,cosmetic spelling mistake in logs; reported by QA,logging,AssertionError,P4
+Security: checkout allows login with empty password,"authentication bypass, unauthorized access to accounts; found during code review",checkout,AssertionError,P3
+Inconsistent formatting in ui output,"cosmetic alignment issue, no functional impact; found during code review",ui,AssertionError,P4
+KeyError crash for unknown item in reports,"unhandled exception, request fails with 500 error; reproducible",reports,KeyError,P2
+Unhandled ZeroDivisionError in api,"crash when input is zero, unhandled exception reaches user; reported by QA",api,ZeroDivisionError,P2
+Security: security allows login with empty password,"authentication bypass, unauthorized access to accounts; found in nightly build",security,AssertionError,P4
+Intermittent network timeout in search,"flaky external service, retry succeeds",search,TimeoutError,P3
+Data loss when saving records in billing,"database corruption, records deleted permanently; found in nightly build",billing,IOError,P1
+Slow response in api under load,"performance degradation, timeout sometimes",api,TimeoutError,P3
+Inconsistent formatting in reports output,"cosmetic alignment issue, no functional impact; regression from last release",reports,AssertionError,P4
+Password stored in plain text by auth,"credentials leak, security compliance failure; reproducible",auth,AssertionError,P1
+Deprecated API warning in calculator,"warning logged, works for now; reported by QA",calculator,DeprecationWarning,P3
+Validation message unclear in utils,"error message confusing, wrong error type raised; seen in staging",utils,ValueError,P3
+KeyError crash for unknown item in reports,"unhandled exception, request fails with 500 error; reported by QA",reports,KeyError,P2
+Inconsistent formatting in docs output,"cosmetic alignment issue, no functional impact; regression from last release",docs,AssertionError,P4
+Unused variable warning in utils,"code style, lint warning only; reproducible",utils,SyntaxWarning,P4
+Session not expired in calculator,token remains valid after logout; customer ticket,calculator,AssertionError,P2
+Validation message unclear in calculator,"error message confusing, wrong error type raised; reported by QA",calculator,ValueError,P3
+KeyError crash for unknown item in inventory,"unhandled exception, request fails with 500 error; reproducible",inventory,KeyError,P2
+Minor UI label misaligned in docs,cosmetic layout issue; found in nightly build,docs,AssertionError,P4
+KeyError crash for unknown item in inventory,"unhandled exception, request fails with 500 error; seen in staging",inventory,KeyError,P2
+Customers overcharged at checkout in inventory,"payment total wrong, money lost, billing incorrect; found during code review",inventory,AssertionError,P1
+SQL injection possible in checkout search,"security hole, attacker can read database",checkout,AssertionError,P1
+Unhandled ZeroDivisionError in calculator,"crash when input is zero, unhandled exception reaches user; found in nightly build",calculator,ZeroDivisionError,P2
+Unused variable warning in ui,"code style, lint warning only; reproducible",ui,SyntaxWarning,P4
+Data loss when saving records in database,"database corruption, records deleted permanently; reported by QA",database,IOError,P1
+Intermittent network timeout in reports,"flaky external service, retry succeeds",reports,TimeoutError,P4
+Edge case not handled in reports,unusual input gives unexpected but harmless result; seen in staging,reports,AssertionError,P3
+Inconsistent formatting in ui output,"cosmetic alignment issue, no functional impact; customer ticket",ui,AssertionError,P2
+Password stored in plain text by database,"credentials leak, security compliance failure; seen in staging",database,AssertionError,P1
+Intermittent network timeout in calculator,"flaky external service, retry succeeds; regression from last release",calculator,TimeoutError,P1
+Minor UI label misaligned in logging,cosmetic layout issue; reproducible,logging,AssertionError,P4
+Negative stock allowed in auth,"inventory goes negative, orders shipped without stock, money lost; found during code review",auth,MissingExceptionHandling,P1
+Minor UI label misaligned in utils,cosmetic layout issue; customer ticket,utils,AssertionError,P4
+KeyError crash for unknown item in orders,"unhandled exception, request fails with 500 error; customer ticket",orders,KeyError,P2
+Data loss when saving records in billing,"database corruption, records deleted permanently",billing,IOError,P1
+Application crash on startup in security,"service down for all users, production outage; regression from last release",security,RuntimeError,P1
+Edge case not handled in reports,unusual input gives unexpected but harmless result; reported by QA,reports,AssertionError,P3
+Docstring outdated in utils,"documentation mismatch, cosmetic",utils,AssertionError,P4
+Report export fails in api,"feature broken for many users, workaround exists; found in nightly build",api,ValueError,P2
+SQL injection possible in checkout search,"security hole, attacker can read database; reported by QA",checkout,AssertionError,P3
+Minor UI label misaligned in reports,cosmetic layout issue; regression from last release,reports,AssertionError,P4
+Typo in logging log message,cosmetic spelling mistake in logs; found in nightly build,logging,AssertionError,P4
+Deprecated API warning in calculator,"warning logged, works for now; regression from last release",calculator,DeprecationWarning,P3
+Validation message unclear in search,"error message confusing, wrong error type raised; customer ticket",search,ValueError,P3
+SQL injection possible in database search,"security hole, attacker can read database; reported by QA",database,AssertionError,P1
+Intermittent network timeout in exchange,"flaky external service, retry succeeds; regression from last release",exchange,TimeoutError,P3
+Minor UI label misaligned in reports,cosmetic layout issue,reports,AssertionError,P4
+Security: checkout allows login with empty password,"authentication bypass, unauthorized access to accounts; reported by QA",checkout,AssertionError,P1
+Rounding precision issue in search,"integer division loses decimals, minor inaccuracy; regression from last release",search,AssertionError,P3
+Docstring outdated in logging,"documentation mismatch, cosmetic; reproducible",logging,AssertionError,P4
+Customers overcharged at checkout in payment,"payment total wrong, money lost, billing incorrect; reproducible",payment,AssertionError,P1
+Docstring outdated in utils,"documentation mismatch, cosmetic; reproducible",utils,AssertionError,P4
+KeyError crash for unknown item in inventory,"unhandled exception, request fails with 500 error; found during code review",inventory,KeyError,P2
+Validation message unclear in utils,"error message confusing, wrong error type raised; reproducible",utils,ValueError,P3
+Report export fails in auth,"feature broken for many users, workaround exists; found in nightly build",auth,ValueError,P2
+Intermittent network timeout in reports,"flaky external service, retry succeeds; reported by QA",reports,TimeoutError,P3
+Unused variable warning in utils,"code style, lint warning only; reported by QA",utils,SyntaxWarning,P4
+SQL injection possible in checkout search,"security hole, attacker can read database; seen in staging",checkout,AssertionError,P1
+Inconsistent formatting in docs output,"cosmetic alignment issue, no functional impact; regression from last release",docs,AssertionError,P4
+TypeError when field is missing in inventory,"crash on malformed input, feature unusable; seen in staging",inventory,TypeError,P2
+Docstring outdated in utils,"documentation mismatch, cosmetic; regression from last release",utils,AssertionError,P2
+Intermittent network timeout in search,"flaky external service, retry succeeds; reported by QA",search,TimeoutError,P3
+Negative stock allowed in security,"inventory goes negative, orders shipped without stock, money lost; found during code review",security,MissingExceptionHandling,P1
+Wrong calculation result in orders,"incorrect output, users get wrong numbers; seen in staging",orders,AssertionError,P2
+Unused variable warning in logging,"code style, lint warning only; seen in staging",logging,SyntaxWarning,P4
+Rounding precision issue in search,"integer division loses decimals, minor inaccuracy; seen in staging",search,AssertionError,P3
+Customers overcharged at checkout in security,"payment total wrong, money lost, billing incorrect; seen in staging",security,AssertionError,P1
+Rounding precision issue in search,"integer division loses decimals, minor inaccuracy",search,AssertionError,P3
+Validation message unclear in utils,"error message confusing, wrong error type raised; found during code review",utils,ValueError,P3
+Account takeover via duplicate registration in database,"existing user credentials overwritten, security vulnerability; regression from last release",database,MissingExceptionHandling,P1
+Report export fails in cart,"feature broken for many users, workaround exists; found in nightly build",cart,ValueError,P2
+Intermittent network timeout in reports,"flaky external service, retry succeeds; found during code review",reports,TimeoutError,P3
+Validation message unclear in reports,"error message confusing, wrong error type raised; found during code review",reports,ValueError,P1
+Negative stock allowed in checkout,"inventory goes negative, orders shipped without stock, money lost; regression from last release",checkout,MissingExceptionHandling,P1
+Application crash on startup in login,"service down for all users, production outage; seen in staging",login,RuntimeError,P1
+Wrong calculation result in reports,"incorrect output, users get wrong numbers; found in nightly build",reports,AssertionError,P2
+Password stored in plain text by payment,"credentials leak, security compliance failure; found during code review",payment,AssertionError,P1
+Wrong calculation result in calculator,"incorrect output, users get wrong numbers",calculator,AssertionError,P2
+Empty list crashes orders,"ZeroDivisionError on empty input, crash; customer ticket",orders,ZeroDivisionError,P2
+Deprecated API warning in calculator,"warning logged, works for now; reproducible",calculator,DeprecationWarning,P3
+Minor UI label misaligned in reports,cosmetic layout issue; reported by QA,reports,AssertionError,P4
+Unused variable warning in utils,"code style, lint warning only",utils,SyntaxWarning,P4
+Slow response in api under load,"performance degradation, timeout sometimes; found during code review",api,TimeoutError,P3
+Typo in reports log message,cosmetic spelling mistake in logs; customer ticket,reports,AssertionError,P4
+Negative stock allowed in payment,"inventory goes negative, orders shipped without stock, money lost; customer ticket",payment,MissingExceptionHandling,P1
+Inconsistent formatting in logging output,"cosmetic alignment issue, no functional impact; found during code review",logging,AssertionError,P1
+Empty list crashes cart,"ZeroDivisionError on empty input, crash; found in nightly build",cart,ZeroDivisionError,P2
+Session not expired in auth,token remains valid after logout; found during code review,auth,AssertionError,P4
+Intermittent network timeout in exchange,"flaky external service, retry succeeds; reported by QA",exchange,TimeoutError,P3
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; found during code review,exchange,AssertionError,P3
+Customers overcharged at checkout in payment,"payment total wrong, money lost, billing incorrect; seen in staging",payment,AssertionError,P1
+Unused variable warning in ui,"code style, lint warning only; reproducible",ui,SyntaxWarning,P4
+Docstring outdated in utils,"documentation mismatch, cosmetic",utils,AssertionError,P4
+Application crash on startup in security,"service down for all users, production outage; found during code review",security,RuntimeError,P1
+SQL injection possible in checkout search,"security hole, attacker can read database; found in nightly build",checkout,AssertionError,P4
+Typo in docs log message,cosmetic spelling mistake in logs; found in nightly build,docs,AssertionError,P4
+Empty list crashes reports,"ZeroDivisionError on empty input, crash; seen in staging",reports,ZeroDivisionError,P2
+Inconsistent formatting in logging output,"cosmetic alignment issue, no functional impact",logging,AssertionError,P4
+Intermittent network timeout in search,"flaky external service, retry succeeds; seen in staging",search,TimeoutError,P3
+Data loss when saving records in security,"database corruption, records deleted permanently; reproducible",security,IOError,P1
+Unused variable warning in logging,"code style, lint warning only; customer ticket",logging,SyntaxWarning,P4
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; regression from last release,exchange,AssertionError,P2
+Inconsistent formatting in ui output,"cosmetic alignment issue, no functional impact; reproducible",ui,AssertionError,P4
+Intermittent network timeout in search,"flaky external service, retry succeeds; found during code review",search,TimeoutError,P3
+Rounding precision issue in utils,"integer division loses decimals, minor inaccuracy",utils,AssertionError,P3
+Slow response in api under load,"performance degradation, timeout sometimes; reproducible",api,TimeoutError,P3
+Empty list crashes orders,"ZeroDivisionError on empty input, crash; seen in staging",orders,ZeroDivisionError,P2
+Wrong calculation result in calculator,"incorrect output, users get wrong numbers; regression from last release",calculator,AssertionError,P2
+Inconsistent formatting in logging output,"cosmetic alignment issue, no functional impact; found during code review",logging,AssertionError,P4
+Deprecated API warning in calculator,"warning logged, works for now; customer ticket",calculator,DeprecationWarning,P3
+Edge case not handled in calculator,unusual input gives unexpected but harmless result; found in nightly build,calculator,AssertionError,P3
+Deprecated API warning in utils,"warning logged, works for now; found during code review",utils,DeprecationWarning,P3
+Minor UI label misaligned in docs,cosmetic layout issue; found in nightly build,docs,AssertionError,P4
+Edge case not handled in api,unusual input gives unexpected but harmless result; reported by QA,api,AssertionError,P3
+Deprecated API warning in search,"warning logged, works for now; found in nightly build",search,DeprecationWarning,P3
+Unhandled ZeroDivisionError in reports,"crash when input is zero, unhandled exception reaches user; reproducible",reports,ZeroDivisionError,P3
+Docstring outdated in docs,"documentation mismatch, cosmetic; regression from last release",docs,AssertionError,P4
+Unused variable warning in utils,"code style, lint warning only; customer ticket",utils,SyntaxWarning,P4
+Deprecated API warning in api,"warning logged, works for now; found in nightly build",api,DeprecationWarning,P3
+Minor UI label misaligned in utils,cosmetic layout issue; regression from last release,utils,AssertionError,P4
+Session not expired in inventory,token remains valid after logout,inventory,AssertionError,P2
+Docstring outdated in reports,"documentation mismatch, cosmetic; customer ticket",reports,AssertionError,P4
+Unused variable warning in logging,"code style, lint warning only",logging,SyntaxWarning,P4
+Application crash on startup in payment,"service down for all users, production outage; reproducible",payment,RuntimeError,P1
+Slow response in search under load,"performance degradation, timeout sometimes; found in nightly build",search,TimeoutError,P3
+TypeError when field is missing in orders,"crash on malformed input, feature unusable; found in nightly build",orders,TypeError,P2
+Unhandled ZeroDivisionError in reports,"crash when input is zero, unhandled exception reaches user",reports,ZeroDivisionError,P1
+Unused variable warning in ui,"code style, lint warning only; found during code review",ui,SyntaxWarning,P4
+Validation message unclear in calculator,"error message confusing, wrong error type raised; customer ticket",calculator,ValueError,P3
+Data loss when saving records in database,"database corruption, records deleted permanently",database,IOError,P1
+Customers overcharged at checkout in login,"payment total wrong, money lost, billing incorrect; customer ticket",login,AssertionError,P1
+Unhandled ZeroDivisionError in calculator,"crash when input is zero, unhandled exception reaches user; regression from last release",calculator,ZeroDivisionError,P2
+Slow response in exchange under load,"performance degradation, timeout sometimes",exchange,TimeoutError,P3
+Rounding precision issue in reports,"integer division loses decimals, minor inaccuracy; found during code review",reports,AssertionError,P3
+Wrong calculation result in reports,"incorrect output, users get wrong numbers; reproducible",reports,AssertionError,P2
+Docstring outdated in reports,"documentation mismatch, cosmetic; reported by QA",reports,AssertionError,P4
+Slow response in reports under load,"performance degradation, timeout sometimes; reproducible",reports,TimeoutError,P3
+Unhandled ZeroDivisionError in reports,"crash when input is zero, unhandled exception reaches user; found in nightly build",reports,ZeroDivisionError,P2
+Security: billing allows login with empty password,"authentication bypass, unauthorized access to accounts",billing,AssertionError,P1
+Edge case not handled in exchange,unusual input gives unexpected but harmless result; customer ticket,exchange,AssertionError,P3
+Wrong calculation result in orders,"incorrect output, users get wrong numbers; customer ticket",orders,AssertionError,P2
+Minor UI label misaligned in ui,cosmetic layout issue; customer ticket,ui,AssertionError,P4
+Unhandled ZeroDivisionError in api,"crash when input is zero, unhandled exception reaches user; seen in staging",api,ZeroDivisionError,P2
+Session not expired in auth,token remains valid after logout; reported by QA,auth,AssertionError,P3
+Rounding precision issue in utils,"integer division loses decimals, minor inaccuracy; reported by QA",utils,AssertionError,P3
+Account takeover via duplicate registration in security,"existing user credentials overwritten, security vulnerability; seen in staging",security,MissingExceptionHandling,P1
+Validation message unclear in utils,"error message confusing, wrong error type raised; reported by QA",utils,ValueError,P3
+Session not expired in calculator,token remains valid after logout; found in nightly build,calculator,AssertionError,P2
+Deprecated API warning in reports,"warning logged, works for now; seen in staging",reports,DeprecationWarning,P3
+Edge case not handled in calculator,unusual input gives unexpected but harmless result; seen in staging,calculator,AssertionError,P3
+Report export fails in inventory,"feature broken for many users, workaround exists; regression from last release",inventory,ValueError,P2
+Wrong calculation result in orders,"incorrect output, users get wrong numbers",orders,AssertionError,P2
+Minor UI label misaligned in docs,cosmetic layout issue; reported by QA,docs,AssertionError,P4
+Rounding precision issue in exchange,"integer division loses decimals, minor inaccuracy; customer ticket",exchange,AssertionError,P3
+Unused variable warning in ui,"code style, lint warning only; seen in staging",ui,SyntaxWarning,P4
+Inconsistent formatting in utils output,"cosmetic alignment issue, no functional impact; found in nightly build",utils,AssertionError,P4
+Unhandled ZeroDivisionError in calculator,"crash when input is zero, unhandled exception reaches user; reported by QA",calculator,ZeroDivisionError,P2
+Docstring outdated in docs,"documentation mismatch, cosmetic; seen in staging",docs,AssertionError,P4
+Security: auth allows login with empty password,"authentication bypass, unauthorized access to accounts; customer ticket",auth,AssertionError,P1
+Wrong calculation result in api,"incorrect output, users get wrong numbers; seen in staging",api,AssertionError,P2
+TypeError when field is missing in inventory,"crash on malformed input, feature unusable; found during code review",inventory,TypeError,P2
+Docstring outdated in utils,"documentation mismatch, cosmetic",utils,AssertionError,P4
+Deprecated API warning in reports,"warning logged, works for now; reported by QA",reports,DeprecationWarning,P3
+Inconsistent formatting in ui output,"cosmetic alignment issue, no functional impact",ui,AssertionError,P4
+Minor UI label misaligned in logging,cosmetic layout issue; reproducible,logging,AssertionError,P4
+Deprecated API warning in utils,"warning logged, works for now; customer ticket",utils,DeprecationWarning,P3
+Wrong calculation result in calculator,"incorrect output, users get wrong numbers",calculator,AssertionError,P2
+Application crash on startup in database,"service down for all users, production outage; reproducible",database,RuntimeError,P2
+Deprecated API warning in utils,"warning logged, works for now; found during code review",utils,DeprecationWarning,P3
+Slow response in api under load,"performance degradation, timeout sometimes; found during code review",api,TimeoutError,P3
+Security: auth allows login with empty password,"authentication bypass, unauthorized access to accounts; customer ticket",auth,AssertionError,P1
+Validation message unclear in api,"error message confusing, wrong error type raised; seen in staging",api,ValueError,P3
+Intermittent network timeout in reports,"flaky external service, retry succeeds; found in nightly build",reports,TimeoutError,P3
+Data loss when saving records in security,"database corruption, records deleted permanently; regression from last release",security,IOError,P1
+Negative stock allowed in inventory,"inventory goes negative, orders shipped without stock, money lost",inventory,MissingExceptionHandling,P1
+Unhandled ZeroDivisionError in reports,"crash when input is zero, unhandled exception reaches user; reported by QA",reports,ZeroDivisionError,P2
+Password stored in plain text by auth,"credentials leak, security compliance failure; reported by QA",auth,AssertionError,P1
+Unused variable warning in reports,"code style, lint warning only; regression from last release",reports,SyntaxWarning,P4
+Validation message unclear in search,"error message confusing, wrong error type raised; reported by QA",search,ValueError,P3
+Minor UI label misaligned in docs,cosmetic layout issue,docs,AssertionError,P4
+Intermittent network timeout in utils,"flaky external service, retry succeeds; seen in staging",utils,TimeoutError,P3
+Slow response in calculator under load,"performance degradation, timeout sometimes; found in nightly build",calculator,TimeoutError,P3
+Intermittent network timeout in utils,"flaky external service, retry succeeds; customer ticket",utils,TimeoutError,P3
+Empty list crashes cart,"ZeroDivisionError on empty input, crash; found during code review",cart,ZeroDivisionError,P2
+Data loss when saving records in checkout,"database corruption, records deleted permanently; found during code review",checkout,IOError,P1
+Empty list crashes auth,"ZeroDivisionError on empty input, crash; reproducible",auth,ZeroDivisionError,P2
+Password stored in plain text by auth,"credentials leak, security compliance failure; seen in staging",auth,AssertionError,P1
+Validation message unclear in api,"error message confusing, wrong error type raised; customer ticket",api,ValueError,P3
+Typo in reports log message,cosmetic spelling mistake in logs; found during code review,reports,AssertionError,P4
+Minor UI label misaligned in reports,cosmetic layout issue; customer ticket,reports,AssertionError,P4
+Slow response in utils under load,"performance degradation, timeout sometimes; seen in staging",utils,TimeoutError,P3
+Report export fails in api,"feature broken for many users, workaround exists; found during code review",api,ValueError,P2
+Report export fails in cart,"feature broken for many users, workaround exists; found in nightly build",cart,ValueError,P2
+TypeError when field is missing in orders,"crash on malformed input, feature unusable; customer ticket",orders,TypeError,P2
+Application crash on startup in database,"service down for all users, production outage; regression from last release",database,RuntimeError,P1
+Report export fails in cart,"feature broken for many users, workaround exists; reproducible",cart,ValueError,P2
+Inconsistent formatting in logging output,"cosmetic alignment issue, no functional impact; reproducible",logging,AssertionError,P4
+Intermittent network timeout in exchange,"flaky external service, retry succeeds; found during code review",exchange,TimeoutError,P3
+Edge case not handled in search,unusual input gives unexpected but harmless result; found during code review,search,AssertionError,P3
+Unused variable warning in ui,"code style, lint warning only; reported by QA",ui,SyntaxWarning,P2

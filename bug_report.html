@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>Bug Prioritization Report</title><style>
+body{font-family:Segoe UI,Arial,sans-serif;margin:30px;color:#222;background:#f6f7f9}
+h1{margin-bottom:4px} .muted{color:#666}
+.cards{display:flex;gap:14px;margin:20px 0;flex-wrap:wrap}
+.card{background:#fff;padding:14px 20px;border-radius:8px;box-shadow:0 1px 3px #0002;min-width:110px}
+.card .n{font-size:26px;font-weight:700}
+.dist{display:flex;height:28px;border-radius:6px;overflow:hidden;margin:10px 0 25px}
+.seg{color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center}
+table{border-collapse:collapse;width:100%;background:#fff;box-shadow:0 1px 3px #0002;margin-bottom:30px}
+th,td{padding:8px 10px;border-bottom:1px solid #eee;text-align:left;vertical-align:top;font-size:14px}
+th{background:#2c3e50;color:#fff}
+.badge{color:#fff;padding:3px 8px;border-radius:4px;font-size:12px;white-space:nowrap}
+.flaky{background:#8e44ad;color:#fff;padding:2px 6px;border-radius:4px;font-size:11px}
+.bar{width:80px;height:8px;background:#eee;border-radius:4px;margin-bottom:3px} .bar div{height:8px;border-radius:4px}
+.passed{color:#27ae60} .failed,.error{color:#c0392b} .skipped{color:#999}
+</style></head><body>
+<h1>Automated Testing &amp; Bug Prioritization Report</h1>
+<div class="muted">Generated 10 Nov 2026, 07:06 &middot; ML model accuracy (hold-out): 0.906</div>
+<div class="cards">
+<div class="card"><div class="n">19</div>Tests run</div>
+<div class="card"><div class="n" style="color:#27ae60">11</div>Passed</div>
+<div class="card"><div class="n" style="color:#c0392b">8</div>Failed</div>
+<div class="card"><div class="n" style="color:#8e44ad">0</div>Flaky</div>
+<div class="card"><div class="n">57.9%</div>Pass rate</div>
+<div class="card"><div class="n">8</div>Unique bugs</div>
+</div>
+<h2>Priority distribution</h2><div class="dist"><div class="seg" style="width:37.5%;background:#c0392b" title="P1: 3">P1 (3)</div><div class="seg" style="width:37.5%;background:#e67e22" title="P2: 3">P2 (3)</div><div class="seg" style="width:25.0%;background:#d4ac0d" title="P3: 2">P3 (2)</div></div>
+<h2>Prioritized bug list</h2>
+<table><tr><th>#</th><th>ID</th><th>Priority</th><th>Score</th><th>Rule / ML</th><th>Bug</th><th>Location</th><th>CC</th><th>Tests</th><th>Why</th></tr><tr>
+<td>1</td><td>BUG-001</td>
+<td><span class="badge" style="background:#c0392b">P1 Critical</span></td>
+<td><div class="bar"><div style="width:75%;background:#c0392b"></div></div>0.75</td>
+<td>0.81 / 0.68 (P1)</td>
+<td><b>AssertionError in auth.login()</b><br><small>security: empty password must not log in</small></td>
+<td><code>auth.py:21</code></td>
+<td>3</td><td>1</td>
+<td><small>critical component &#x27;auth&#x27; ; security/financial keywords in failure</small></td></tr><tr>
+<td>2</td><td>BUG-002</td>
+<td><span class="badge" style="background:#c0392b">P1 Critical</span></td>
+<td><div class="bar"><div style="width:71%;background:#c0392b"></div></div>0.71</td>
+<td>0.79 / 0.59 (P3)</td>
+<td><b>MissingExceptionHandling in auth.register()</b><br><small>DID NOT RAISE ValueError</small></td>
+<td><code>auth.py:11</code></td>
+<td>4</td><td>1</td>
+<td><small>critical component &#x27;auth&#x27; ; severe failure type MissingExceptionHandling ; security/financial keywords in failure</small></td></tr><tr>
+<td>3</td><td>BUG-007</td>
+<td><span class="badge" style="background:#c0392b">P1 Critical</span></td>
+<td><div class="bar"><div style="width:71%;background:#c0392b"></div></div>0.71</td>
+<td>0.71 / 0.70 (P1)</td>
+<td><b>MissingExceptionHandling in inventory.remove_item()</b><br><small>DID NOT RAISE ValueError</small></td>
+<td><code>inventory.py:17</code></td>
+<td>1</td><td>1</td>
+<td><small>critical component &#x27;inventory&#x27; ; severe failure type MissingExceptionHandling ; security/financial keywords in failure</small></td></tr><tr>
+<td>4</td><td>BUG-008</td>
+<td><span class="badge" style="background:#e67e22">P2 High</span></td>
+<td><div class="bar"><div style="width:70%;background:#e67e22"></div></div>0.70</td>
+<td>0.71 / 0.68 (P2)</td>
+<td><b>AssertionError in inventory.apply_discount()</b><br><small>assert 1100.0 == 900.0</small></td>
+<td><code>inventory.py:25</code></td>
+<td>1</td><td>1</td>
+<td><small>critical component &#x27;inventory&#x27; ; security/financial keywords in failure</small></td></tr><tr>
+<td>5</td><td>BUG-006</td>
+<td><span class="badge" style="background:#e67e22">P2 High</span></td>
+<td><div class="bar"><div style="width:59%;background:#e67e22"></div></div>0.59</td>
+<td>0.54 / 0.67 (P2)</td>
+<td><b>KeyError in inventory.remove_item()</b><br><small>&#x27;laptop&#x27;</small></td>
+<td><code>inventory.py:19</code></td>
+<td>1</td><td>1</td>
+<td><small>critical component &#x27;inventory&#x27; ; severe failure type KeyError</small></td></tr><tr>
+<td>6</td><td>BUG-003</td>
+<td><span class="badge" style="background:#e67e22">P2 High</span></td>
+<td><div class="bar"><div style="width:50%;background:#e67e22"></div></div>0.50</td>
+<td>0.47 / 0.54 (P3)</td>
+<td><b>ZeroDivisionError in calculator.divide()</b><br><small>division by zero</small></td>
+<td><code>calculator.py:14</code></td>
+<td>1</td><td>1</td>
+<td><small>severe failure type ZeroDivisionError</small></td></tr><tr>
+<td>7</td><td>BUG-005</td>
+<td><span class="badge" style="background:#d4ac0d">P3 Medium</span></td>
+<td><div class="bar"><div style="width:49%;background:#d4ac0d"></div></div>0.49</td>
+<td>0.47 / 0.52 (P3)</td>
+<td><b>ZeroDivisionError in calculator.average()</b><br><small>integer division or modulo by zero</small></td>
+<td><code>calculator.py:19</code></td>
+<td>1</td><td>1</td>
+<td><small>severe failure type ZeroDivisionError</small></td></tr><tr>
+<td>8</td><td>BUG-004</td>
+<td><span class="badge" style="background:#d4ac0d">P3 Medium</span></td>
+<td><div class="bar"><div style="width:44%;background:#d4ac0d"></div></div>0.44</td>
+<td>0.41 / 0.48 (P3)</td>
+<td><b>AssertionError in calculator.average()</b><br><small>assert 1 == 1.5</small></td>
+<td><code>calculator.py:17</code></td>
+<td>1</td><td>1</td>
+<td><small></small></td></tr></table>
+<h2>Test execution log</h2>
+<table><tr><th>Test</th><th>Outcome</th><th>Duration</th></tr><tr><td><code>sample_app/tests/test_auth.py::test_register_and_login</code></td><td class='passed'>passed</td><td>0.8 ms</td></tr><tr><td><code>sample_app/tests/test_auth.py::test_wrong_password_rejected</code></td><td class='passed'>passed</td><td>0.4 ms</td></tr><tr><td><code>sample_app/tests/test_auth.py::test_empty_password_rejected</code></td><td class='failed'>failed</td><td>0.5 ms</td></tr><tr><td><code>sample_app/tests/test_auth.py::test_duplicate_registration_blocked</code></td><td class='failed'>failed</td><td>0.4 ms</td></tr><tr><td><code>sample_app/tests/test_auth.py::test_short_password</code></td><td class='passed'>passed</td><td>0.3 ms</td></tr><tr><td><code>sample_app/tests/test_auth.py::test_strong_password</code></td><td class='passed'>passed</td><td>0.2 ms</td></tr><tr><td><code>sample_app/tests/test_calculator.py::test_add</code></td><td class='passed'>passed</td><td>0.2 ms</td></tr><tr><td><code>sample_app/tests/test_calculator.py::test_subtract</code></td><td class='passed'>passed</td><td>0.2 ms</td></tr><tr><td><code>sample_app/tests/test_calculator.py::test_divide_normal</code></td><td class='passed'>passed</td><td>0.2 ms</td></tr><tr><td><code>sample_app/tests/test_calculator.py::test_divide_by_zero_handled</code></td><td class='failed'>failed</td><td>0.2 ms</td></tr><tr><td><code>sample_app/tests/test_calculator.py::test_average_float</code></td><td class='failed'>failed</td><td>0.4 ms</td></tr><tr><td><code>sample_app/tests/test_calculator.py::test_average_empty</code></td><td class='failed'>failed</td><td>0.2 ms</td></tr><tr><td><code>sample_app/tests/test_calculator.py::test_percentage</code></td><td class='passed'>passed</td><td>0.2 ms</td></tr><tr><td><code>sample_app/tests/test_inventory.py::test_total_value</code></td><td class='passed'>passed</td><td>0.2 ms</td></tr><tr><td><code>sample_app/tests/test_inventory.py::test_remove_unknown_item</code></td><td class='failed'>failed</td><td>0.3 ms</td></tr><tr><td><code>sample_app/tests/test_inventory.py::test_stock_never_negative</code></td><td class='failed'>failed</td><td>0.3 ms</td></tr><tr><td><code>sample_app/tests/test_inventory.py::test_discount_reduces_price</code></td><td class='failed'>failed</td><td>0.4 ms</td></tr><tr><td><code>sample_app/tests/test_inventory.py::test_checkout</code></td><td class='passed'>passed</td><td>0.2 ms</td></tr><tr><td><code>sample_app/tests/test_inventory.py::test_exchange_rate_service</code></td><td class='passed'>passed</td><td>0.2 ms</td></tr></table>
+</body></html>
